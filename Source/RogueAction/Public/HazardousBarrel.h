@@ -14,7 +14,13 @@ class ROGUEACTION_API AHazardousBarrel : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
+public:
+
+	// Sets default values for this actor's properties
+	AHazardousBarrel();
+
+
+protected:
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* MeshComp;
@@ -22,11 +28,14 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	URadialForceComponent* ForceComp;
 
+	//included in instructor solution...
+	virtual void PostInitializeComponents() override;
+
+	//This must be marked with UFUNCTION in order to "bind" to event
 	UFUNCTION()
 	void HitBarrel( UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
-	// Sets default values for this actor's properties
-	AHazardousBarrel();
+
 
 protected:
 	// Called when the game starts or when spawned

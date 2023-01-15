@@ -21,6 +21,16 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Attack")
 	TSubclassOf<AActor> ProjectileClass;
 
+	//Assignment 2 additions
+
+	UPROPERTY(EditAnywhere, Category = "Attack")
+	TSubclassOf<AActor> BlackholeProjectile; // SecondaryProjectile
+	
+	UPROPERTY(EditAnywhere, Category = "Attack")
+	TSubclassOf<AActor> TeleportProjectile;
+	
+	//End assignment 2 additions
+
 	UPROPERTY(EditAnywhere, Category = "Attack")
 	UAnimMontage* AttackAnim;
 
@@ -52,6 +62,20 @@ protected:
 	void PrimaryAttack();
 
 	void PrimaryAttack_TimeElapsed();
+
+	//Assignment 2 additions
+	// %%%%%%%%%%%%
+	void SecondaryAttack();
+
+	void SecondaryAttack_TimeElapsed();
+
+	void TeleportAttack();
+
+	void TeleportAttack_TimeElapsed();
+
+	void ProjectileAttack(TSubclassOf<AActor> ProjClass);
+	// %%%%%%%%%%%%
+	//End assignment 2 additions
 
 	void PrimaryInteract();
 
